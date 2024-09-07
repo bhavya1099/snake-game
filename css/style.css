@@ -11,6 +11,7 @@
   --food-color: linear-gradient(red, purple);
   --color: black;
   --snake-bg: url("../assets/snake-trans.png");
+  --sad-snake-bg: url("../assets/sad-snake.png");
 }
 
 .dark-theme {
@@ -21,6 +22,7 @@
   --food-color: linear-gradient(white, brown);
   --color: black;
   --snake-bg: url("../assets/dark-snake.png");
+  --sad-snake-bg: url("../assets/sad-snake.png");
 }
 
 .blue-theme {
@@ -31,10 +33,12 @@
   --food-color: linear-gradient(white, yellow);
   --color: white;
   --snake-bg: url("../assets/dark-snake.png");
+  --sad-snake-bg: url("../assets/sad-snake.png");
 }
 
 .body {
   background: var(--snake-bg);
+  width: 100%;
   background-position: bottom right;
   background-color: var(--bg-color);
   min-height: 100vh;
@@ -46,13 +50,19 @@
   color: var(--color);
 }
 
+@media screen and (max-width: 800px) {
+  .board {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
 #board {
   background: var(--primary-color);
   width: 90vmin;
   height: 92vmin;
   border: 2px solid black;
   position: relative;
-  right: 76px;
+  right: 190px;
   display: grid;
   grid-template-rows: repeat(18, 1fr);
   grid-template-columns: repeat(
@@ -76,6 +86,11 @@
   background: var(--food-color);
   border: 0.25vmin solid black;
   border-radius: 8px;
+}
+
+.description {
+  display: flex;
+  align-items: center;
 }
 
 #scoreBox {
@@ -152,4 +167,58 @@
   cursor: pointer;
   background: linear-gradient(blue, white);
   width: 35px;
+}
+
+@media screen and (max-width: 800px) {
+  #board {
+    width: 100%; /* Use full width for smaller screens */
+    height: auto;
+  }
+}
+@media screen and (max-width: 670px) {
+  #board {
+    width: 80%; /* Use full width for smaller screens */
+    height: 450px;
+    position: relative;
+    left: 1px;
+  }
+  #themeBox {
+    right: 18%; /* Adjust positioning for smaller screens */
+    font-size: 3vmin; /* Larger font for better readability on smaller devices */
+  }
+  #scoreBox {
+    right: 37%;
+  }
+  #hiscoreBox {
+    right: 33%;
+  }
+  #speedBox {
+    right: 26%;
+  }
+
+  .body {
+    background-color: green;
+    /* background: var(--sad-snake-bg); */
+    background-position: bottom;
+    min-height: 100vh;
+    background-size: 40vw 20vh;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (min-width: 670px) and (max-width: 1154px) {
+  #board {
+    width: 80%;
+    height: 450px;
+    position: relative;
+    left: 2px;
+  }
+  .body {
+    background-color: green;
+    background: var(--sad-snake-bg);
+    background-position: top left;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    background-size: 40vw 20vh;
+    background-repeat: no-repeat;
+  }
 }
