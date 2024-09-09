@@ -144,6 +144,31 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
+const upDir = document.getElementById("upArrow");
+const downDir = document.getElementById("downArrow");
+const leftDir = document.getElementById("leftArrow");
+const rightDir = document.getElementById("rightArrow");
+
+upDir.addEventListener("click", () => {
+  inputDir.x = 0;
+  inputDir.y = -1;
+});
+
+downDir.addEventListener("click", () => {
+  inputDir.x = 0;
+  inputDir.y = 1;
+});
+
+leftDir.addEventListener("click", () => {
+  inputDir.x = -1;
+  inputDir.y = 0;
+});
+
+rightDir.addEventListener("click", () => {
+  inputDir.x = 1;
+  inputDir.y = 0;
+});
+
 const buttonInc = document.getElementById("increament");
 const buttonDec = document.getElementById("decreament");
 

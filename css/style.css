@@ -178,22 +178,30 @@
 @media screen and (max-width: 670px) {
   #board {
     width: 80%; /* Use full width for smaller screens */
-    height: 450px;
+    height: 435px;
     position: relative;
     left: 1px;
   }
   #themeBox {
-    right: 18%; /* Adjust positioning for smaller screens */
-    font-size: 3vmin; /* Larger font for better readability on smaller devices */
+    right: 45%; /* Adjust positioning for smaller screens */
+    font-size: 4vmin; /* Larger font for better readability on smaller devices */
+  }
+  #speedText {
+    height: 24px;
   }
   #scoreBox {
-    right: 37%;
+    right: 78%;
+    font-size: 4vmin;
   }
   #hiscoreBox {
-    right: 33%;
+    right: 67%;
+    font-size: 4vmin;
   }
   #speedBox {
-    right: 26%;
+    right: 53%;
+  }
+  #speedLabel {
+    font-size: 4vmin;
   }
 
   .body {
@@ -203,6 +211,12 @@
     min-height: 100vh;
     background-size: 40vw 20vh;
     background-repeat: no-repeat;
+  }
+  .direction {
+    height: 105px;
+    position: absolute;
+    top: 75px !important;
+    right: 34px !important;
   }
 }
 @media screen and (min-width: 670px) and (max-width: 1154px) {
@@ -221,4 +235,56 @@
     background-size: 40vw 20vh;
     background-repeat: no-repeat;
   }
+  .direction {
+    height: 105px;
+    position: absolute;
+    bottom: 153px !important;
+    right: 100px !important;
+  }
+}
+.direction {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 105px;
+  position: absolute;
+  top: 170px;
+  right: 400px;
+}
+.leftRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 140px;
+}
+
+.up {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#upArrow,
+#downArrow {
+  background: goldenrod;
+  border-radius: 58px;
+  border: none;
+  width: 42px;
+  height: 45px;
+}
+
+#leftArrow {
+  background: goldenrod;
+  border-radius: 83px;
+  border: none;
+  width: 46px;
+  height: 40px;
+}
+
+#rightArrow {
+  background: goldenrod;
+  border-radius: 73px;
+  border: none;
+  width: 46px;
+  height: 40px;
 }
